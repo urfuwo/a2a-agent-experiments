@@ -23,10 +23,8 @@ import { ai } from "./genkit.js";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-if (!process.env.GOOGLE_API_KEY) {
-  console.error("GOOGLE_API_KEY environment variable is not set.");
-  throw new Error("GOOGLE_API_KEY environment variable is not set.");
-}
+// SAP AI Core credentials are loaded in genkit.ts
+// No need to check for GOOGLE_API_KEY anymore
 
 const contentEditorPrompt = ai.prompt("content_editor");
 

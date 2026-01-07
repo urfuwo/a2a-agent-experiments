@@ -30,10 +30,8 @@ import {
 import { TaskDelegator } from "./task-delegator.js";
 import { A2ACommunicationManager } from "./a2a-communication.js";
 
-if (!process.env.GEMINI_API_KEY) {
-  console.error("GEMINI_API_KEY environment variable not set.");
-  process.exit(1);
-}
+// SAP AI Core credentials are loaded in genkit.ts
+// No need to check for GEMINI_API_KEY anymore
 
 // Load the Genkit prompt
 const orchestratorPrompt = ai.prompt('orchestrator');
@@ -44,10 +42,10 @@ const orchestratorPrompt = ai.prompt('orchestrator');
 class OrchestratorAgentExecutor implements AgentExecutor {
   private cancelledTasks = new Set<string>();
   private researchStates = new Map<string, OrchestrationState>();
-  private taskDelegator: TaskDelegator;
-  private a2aManager: A2ACommunicationManager;
+  private taskDelegator?: TaskDelegator;
+  private a2aManager?: A2ACommunicationManager;
 
-  constructor(taskDelegator: TaskDelegator, a2aManager: A2ACommunicationManager) {
+  constructor(taskDelegator?: TaskDelegator, a2aManager?: A2ACommunicationManager) {
     this.taskDelegator = taskDelegator;
     this.a2aManager = a2aManager;
   }

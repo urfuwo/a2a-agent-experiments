@@ -22,7 +22,13 @@
     "agents:movie-agent": "npx tsx src/agents/movie-agent/index.ts",
     "agents:coder": "npx tsx src/agents/coder/index.ts",
     "agents:content-editor": "npx tsx src/agents/content-editor/index.ts",
-    "agents:news-research-agent": "npx tsx src/agents/news-research-agent/index.ts"
+    "agents:news-research-agent": "npx tsx src/agents/news-research-agent/index.ts",
+    "agents:web-research-agent": "npx tsx src/agents/web-research-agent/index.ts",
+    "agents:academic-research-agent": "npx tsx src/agents/academic-research-agent/index.ts",
+    "agents:orchestrator-agent": "npx tsx src/agents/orchestrator-agent/index.ts",
+    "agents:planning-agent": "npx tsx src/agents/planning-agent/index.ts",
+    "agents:data-analysis-agent": "npx tsx src/agents/data-analysis-agent/index.ts",
+    "agents:lead-manager": "npx tsx src/agents/lead-manager/index.ts"
   },
   "dependencies": {
     "@a2a-js/sdk": "^0.3.4",
@@ -32,6 +38,8 @@
     "@genkit-ai/vertexai": "^1.19.3",
     "@libsql/client": "^0.15.15",
     "@libsql/core": "^0.15.15",
+    "@sap-ai-sdk/orchestration": "^1.4.0",
+    "@sap-ai-sdk/ai-api": "^1.4.0",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",

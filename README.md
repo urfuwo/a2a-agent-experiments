@@ -4,7 +4,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-Sample JavaScript/TypeScript agents demonstrating the Agent-to-Agent (A2A) protocol using Genkit and Google Gemini AI.
+Sample JavaScript/TypeScript agents demonstrating the Agent-to-Agent (A2A) protocol using Genkit and SAP AI Core Orchestration Service.
 
 ## Overview
 
@@ -73,8 +73,8 @@ graph TD
 
 - **Node.js**: Version 18 or higher (ES modules support required)
 - **npm**: Package manager (yarn also supported)
-- **API Keys**:
-  - [Google Gemini API Key](https://aistudio.google.com/) - Required for all agents
+- **SAP BTP AI Core**: Service key with Orchestration Service access
+- **API Keys** (Optional):
   - [TMDB API Key](https://developer.themoviedb.org/docs/getting-started) - Required only for Movie Agent
 
 ### Installation
@@ -92,15 +92,20 @@ graph TD
    npm install
    ```
 
-3. **Set environment variables**:
+3. **Configure SAP AI Core credentials**:
+
+   Each agent needs a `.env` file in its directory with SAP AI Core credentials:
 
    ```bash
-   # Required for all agents
-   export GEMINI_API_KEY=your_gemini_api_key_here
-
-   # Required for Movie Agent only
-   export TMDB_API_KEY=your_tmdb_api_key_here
+   # Example: src/agents/content-editor/.env
+   SAP_AI_CORE_CLIENT_ID=your-client-id
+   SAP_AI_CORE_CLIENT_SECRET=your-client-secret
+   SAP_AI_CORE_TOKEN_URL=https://your-auth-url/oauth/token
+   SAP_AI_CORE_BASE_URL=https://your-ai-api-url
+   SAP_AI_CORE_RESOURCE_GROUP=default
    ```
+
+   See [SAP_AI_CORE_INTEGRATION.md](SAP_AI_CORE_INTEGRATION.md) for detailed setup instructions.
 
 4. **Verify setup**:
 

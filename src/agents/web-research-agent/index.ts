@@ -21,10 +21,8 @@ import { ai } from "./genkit.js";
 import { WebSearchUtils, SearchResult, NewsSearchResult, ScholarSearchResult } from './web-search.js';
 import { ResearchFinding, SourceCitation, ResearchResult } from '../shared/interfaces.js';
 
-if (!process.env.GEMINI_API_KEY) {
-  console.error("GEMINI_API_KEY environment variable not set.");
-  process.exit(1);
-}
+// SAP AI Core credentials are loaded in genkit.ts
+// No need to check for GEMINI_API_KEY anymore
 
 // Load the Genkit prompt
 const webResearchPrompt = ai.prompt('web_research');

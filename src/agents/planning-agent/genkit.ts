@@ -1,21 +1,18 @@
-import { googleAI } from "@genkit-ai/googleai";
-import { genkit } from "genkit";
-import { dirname } from "path";
+import * as dotenv from "dotenv";
+import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
+// Load .env file from the same directory as this file
+const __dirname = dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: join(__dirname, '.env') });
+
+import { genkit } from "genkit";
+import { sapAiCore } from "../shared/sap-aicore-genkit.js";
+
 export const ai = genkit({
-  plugins: [googleAI()],
-  model: googleAI.model("gemini-2.5-flash", {
-    temperature: 0.1,
-    top_p: 0.5,
-    max_tokens: 65000,
-    thinkingConfig: {
-        thinkingBudget: -1, // dynamic budget based on needed tokens
-        includeThoughts: true
-    },
-    mediaResolution: 'MEDIA_RESOLUTION_LOW',
-  }),
-  promptDir: dirname(fileURLToPath(import.meta.url)),
+  plugins: [sapAiCore()],
+  model: sapAiCore.model("gpt-4o"),
+  promptDir: __dirname,
 });
 
 export { z } from "genkit";

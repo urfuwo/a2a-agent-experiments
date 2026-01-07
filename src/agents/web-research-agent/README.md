@@ -24,13 +24,18 @@ This agent conducts thorough web-based research by:
 
 ### Environment Variables
 
-- `GEMINI_API_KEY`: Required for AI model access
+- `SAP_AI_CORE_CLIENT_ID`: SAP BTP AI Core client ID
+- `SAP_AI_CORE_CLIENT_SECRET`: SAP BTP AI Core client secret
+- `SAP_AI_CORE_TOKEN_URL`: SAP BTP authentication URL
+- `SAP_AI_CORE_BASE_URL`: SAP AI Core API base URL
+- `SAP_AI_CORE_RESOURCE_GROUP`: Resource group (default: "default")
 - `WEB_RESEARCH_AGENT_PORT`: Port for the agent server (default: 41244)
 
 ### Dependencies
 
-- Google Gemini 2.5 Flash model with thinking capabilities
+- SAP AI Core Orchestration Service (GPT-4o model)
 - A2A protocol for inter-agent communication
+- GenKit framework with SAP AI Core plugin
 
 ## Usage
 
