@@ -28,7 +28,9 @@
     "agents:orchestrator-agent": "npx tsx src/agents/orchestrator-agent/index.ts",
     "agents:planning-agent": "npx tsx src/agents/planning-agent/index.ts",
     "agents:data-analysis-agent": "npx tsx src/agents/data-analysis-agent/index.ts",
-    "agents:lead-manager": "npx tsx src/agents/lead-manager/index.ts"
+    "agents:lead-manager": "npx tsx src/agents/lead-manager/index.ts",
+    "agents:simple-router": "npx tsx src/agents/simple-router/index.ts",
+    "agents:start-all": "npx tsx src/agents/simple-router/start-all.ts"
   },
   "dependencies": {
     "@a2a-js/sdk": "^0.3.4",
